@@ -98,3 +98,18 @@ $tabs.on('click', function () {
 // hover 멈춤
 $('.sec07 .fit').on('mouseenter', stopAuto);
 $('.sec07 .fit').on('mouseleave', startAuto);
+
+// sec09 - 슬라이드
+// sec09 - find your fit tabs
+const $fitTabs = $('.sec09 .fit__tabs button');
+const $fitPanels = $('.sec09 .find__panel');
+
+$fitTabs.on('click', function () {
+  const target = $(this).data('fit');
+
+  $fitTabs.removeClass('is-active');
+  $(this).addClass('is-active');
+
+  $fitPanels.removeClass('is-active');
+  $fitPanels.filter('[data-fit="' + target + '"]').addClass('is-active');
+});

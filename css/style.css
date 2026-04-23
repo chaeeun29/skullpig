@@ -560,7 +560,9 @@ h3.title {
 .sec05,
 .sec06,
 .sec07,
-.sec08 {  
+.sec08,
+.sec09,
+.sec10 {  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -986,4 +988,271 @@ h3.title {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 440px;
+}
+
+/* 섹션9 - find your fit */
+.sec09 {
+  background-color: #222;
+  color: #fff;
+}
+
+.sec09 .find {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.sec09 .find__header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sec09 .fit__tabs {
+  display: flex;
+  gap: 12px
+}
+
+.sec09 .fit__tabs button {
+  width: 101.5px;
+  border: 1px solid #fff;
+  padding: 7px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.sec09 .find__panel {
+  display: flex;
+  gap: 12px;
+}
+
+.sec09 .find__visual {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.sec09 .find__item {
+  display: block;
+}
+
+.sec09 .find__panel .img-box > img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.sec09 .fit__tabs button.is-active {
+  background-color: #fff;
+  color: #111;
+}
+
+/* 마우스 호버시 옷 정보 나타나게 */
+.sec09 .find__hotspot {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sec09 .find__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.sec09 .find__dot::after {
+  content: "";
+  position: absolute  ;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.sec09 .find__info {
+  position: absolute;
+  top: calc(50% + 40px);
+  left: 50%;
+  width: 320px;
+  height: 150px;
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.sec09 .find__hotspot:hover .find__dot::after,
+.sec09 .find__hotspot:focus-within .find__dot::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.sec09 .find__hotspot:hover .find__info,
+.sec09 .find__hotspot:focus-within .find__info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sec09 .find__thumb {
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E6E6E6;
+}
+
+.sec09 .find__thumb img {
+  display: block;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.sec09 .find__text {
+  letter-spacing: -0.02em;
+}
+
+.sec09 .find__text .name {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.sec09 .find__text .price {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.sec09 .find__text .price > span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.sec09 .find__text .price > strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sec09 .color-chip {
+  display: flex;
+  gap: 3px;
+}
+
+.sec09 .color-chip span {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border: 0.2px solid #E6E6E6;
+}
+
+.sec09 .color-chip .black {
+  background-color: #111;
+}
+
+.sec09 .color-chip .white {
+  background-color: #fff;
+}
+
+.sec09 .color-chip .beige {
+  background-color: #DCD4CB;
+}
+
+.sec09 .color-chip .mint {
+  background-color: #BCE1DD;
+}
+
+.sec09 .color-chip .gray {
+  background-color: #B8B8B8;
+}
+
+.sec09 .color-chip .brown {
+  background-color: #402D26;
+}
+
+.sec09 .color-chip .berry {
+  background-color: #B28197;
+}
+
+.sec09 .color-chip .skyblue {
+  background-color: #BFCEE1;
+}
+
+.sec09 .color-chip .charcoal {
+  background-color: #3B3838;
+}
+
+.sec09 .color-chip .navy {
+  background-color: #012B45;
+}
+
+.sec09 .color-chip .lavender {
+  background-color: #DBD7ED;
+}
+
+.sec09 .color-chip .oatbeige {
+  background-color: #EAE3C7;
+}
+
+.sec09 .color-chip .pink {
+  background-color: #CFB6BA;
+}
+
+.sec09 .color-chip .green {
+  background-color: #CAE3BB;
+}
+
+.sec09 .hotspot01 {
+  border: 1px solid red;
+  top: 30%;
+  left: 65%;
+}
+
+.sec09 .hotspot02 {
+  border: 1px solid red;
+  top: 65%;
+  left: 42%;
+}
+
+.sec09 .find__panel {
+  display: none;
+  gap: 12px;
+}
+
+.sec09 .find__panel.is-active {
+  display: flex;
 }
