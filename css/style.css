@@ -292,6 +292,11 @@ button {
   height: 840px;
   position: relative;
   overflow: hidden;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 
 .sec01 > .banner > .img-box {
@@ -307,7 +312,6 @@ button {
 }
 
 .sec01 > .banner > .txt {
-  height: 100%;
   position: relative;
   z-index: 2;
   display: flex;
@@ -324,6 +328,7 @@ button {
   padding: 6px 16px;
   font-size: 14px;
   font-weight: 500;
+  text-align: center;
 }
 
 .sec01 > .banner > .txt > .title {
@@ -334,12 +339,45 @@ button {
   text-align: center;
 }
 
-.sec01 > .banner > .txt > button {
+.sec01 > .banner > button {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
   padding: 20px 40px;
   font-size: 12px;
   font-weight: 600;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   letter-spacing: 0.1em;
+  overflow: hidden;
+  color: #000;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.sec01 > .banner > button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #111;
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+
+/* 텍스트 */
+.sec01 > .banner > button > span {
+  position: relative;
+  z-index: 1;
+}
+
+/* hover */
+.sec01 > .banner > button:hover::before {
+  width: 100%;
+}
+
+.sec01 > .banner > button:hover {
+  color: #fff;
 }
 
 /* 섹션mypage */
