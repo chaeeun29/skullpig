@@ -562,7 +562,8 @@ h3.title {
 .sec07,
 .sec08,
 .sec09,
-.sec10 {  
+.sec10,
+.footer {  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1317,4 +1318,132 @@ h3.title {
   font-weight: 400;
   color: #777;
   letter-spacing: -0.04em;
+}
+
+/* 섹션11 - sns */
+.sec11 > .sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 40px;
+}
+
+.sec11 .sns .sns__header > p {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.sec11 .sns__body {
+  display: flex;
+  overflow: hidden;
+}
+
+.sec11 .sns__body > .img-box {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 0;
+}
+
+.sec11 .sns__body .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 푸터 */
+.footer {
+  border-top: 1px solid black;
+}
+
+.footer .con {
+  display: flex;
+  gap: 48px;
+}
+
+.footer .cs {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.footer .info {
+  flex-grow: 2;
+  flex-basis: 0;
+}
+
+.footer .exchange {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.footer .title {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.footer .cs__title {
+  padding-bottom: 27px;
+}
+
+.footer .cs__number {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -1.4px;
+  padding-bottom: 8px;
+}
+
+.footer .cs__time {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+  padding-bottom: 32px;
+}
+
+.footer .cs__btn {
+  border: 1px solid #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.footer .info,
+.footer .exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.footer .info__list {
+  display: flex;
+  gap: 20px;
+}
+
+.footer .info__detail,
+.footer .exchange__con {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: #777;
+}
+
+.footer .info__copy {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  color: #ccc;
+}
+
+.footer .exchange__con p:last-child {
+  color: #111;
 }
