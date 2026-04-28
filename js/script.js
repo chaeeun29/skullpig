@@ -1,3 +1,65 @@
+// sec01 - 배너 스와이퍼
+const bannerSwiper = new Swiper('.sec01 .banner', {
+  loop: true,
+  speed: 1000,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+});
+
+// mypage - 카운트 효과
+$(function () {
+  let isCounted = false;
+
+  function countUp() {
+    $('.mypage .count').each(function () {
+      const $this = $(this);
+      const target = Number($this.data('target'));
+      const suffix = $this.data('suffix') || '';
+      const duration = 1000;
+      const startTime = Date.now();
+
+      function update() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.floor(target * progress);
+
+        $this.text(current.toLocaleString() + suffix);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          $this.text(target.toLocaleString() + suffix);
+        }
+      }
+
+      update();
+    });
+  }
+
+  function mypageMotion() {
+    const windowBottom = $(window).scrollTop() + $(window).height();
+    const sectionTop = $('.mypage').offset().top;
+
+    if (!isCounted && windowBottom > sectionTop + 100) {
+      isCounted = true;
+
+      $('.progress-bar').each(function () {
+        const progress = $(this).data('progress');
+        $(this).css('--progress', progress + '%');
+      });
+
+      $('.mypage').addClass('is-active');
+      countUp();
+    }
+  }
+
+  $(window).on('scroll', mypageMotion);
+  mypageMotion();
+});
+
+// sec02 - 아코디언
 $('.sec02 .category-accordion .acc-title').on('click', function () {
   const $item = $(this).closest('.acc-item');
   const category = $item.data('category');

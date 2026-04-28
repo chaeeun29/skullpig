@@ -292,26 +292,29 @@ button {
   height: 840px;
   position: relative;
   overflow: hidden;
-   display: flex;
+}
+
+.sec01 > .banner .swiper-slide {
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 24px;
 }
-
-.sec01 > .banner > .img-box {
+.sec01 > .banner .img-box {
   position: absolute;
   inset: 0;
 
 }
 
-.sec01 > .banner > .img-box > img {
+.sec01 > .banner .img-box > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.sec01 > .banner > .txt {
+.sec01 > .banner .txt {
   position: relative;
   z-index: 2;
   display: flex;
@@ -319,27 +322,26 @@ button {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  color: #fff;
-  mix-blend-mode: difference;
+  color: #111;
 }
 
-.sec01 > .banner > .txt > .subtitle {
-  border: 1px solid #fff;
+.sec01 > .banner .txt > .subtitle {
+  border: 1px solid #111;
   padding: 6px 16px;
   font-size: 14px;
   font-weight: 500;
   text-align: center;
 }
 
-.sec01 > .banner > .txt > .title {
-  font-size: 70px;
+.sec01 > .banner .txt > .title {
+  font-size: 60px;
   font-weight: 700;
   line-height: 72px;
   letter-spacing: -3.6px;
   text-align: center;
 }
 
-.sec01 > .banner > button {
+.sec01 > .banner button {
   position: relative;
   z-index: 3;
   display: inline-block;
@@ -353,7 +355,7 @@ button {
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.sec01 > .banner > button::before {
+.sec01 > .banner button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -366,17 +368,17 @@ button {
 }
 
 /* 텍스트 */
-.sec01 > .banner > button > span {
+.sec01 > .banner button > span {
   position: relative;
   z-index: 1;
 }
 
 /* hover */
-.sec01 > .banner > button:hover::before {
+.sec01 > .banner button:hover::before {
   width: 100%;
 }
 
-.sec01 > .banner > button:hover {
+.sec01 > .banner button:hover {
   color: #fff;
 }
 
@@ -443,9 +445,14 @@ button {
 }
 
 .mypage > .con > .info > .progress > .divider > .value {
-  width: 80px;
+  width: 0;
   height: 100%;
   background-color: #111;
+  transition: width 1s ease;
+}
+
+.mypage.is-active > .con > .info > .progress > .divider > .value {
+  width: var(--progress);
 }
 
 .mypage > .con > .info > .progress > .con > .label,
@@ -669,6 +676,29 @@ h3.title {
   gap: 24px;
 }
 
+.sec03 .lookbook__item .right .img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.sec03 .lookbook__item .right .img-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec03 .lookbook__item .right .img-box .hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sec03 .lookbook__item .right .img-box:hover .hover {
+  opacity: 1;
+}
+
 .sec03 .lookbook__item .right .info {
   display: flex;
   flex-direction: column;
@@ -709,7 +739,6 @@ h3.title {
 }
 
 /* 섹션4 - best */
-/* + 섹션5 - new */
 .sec04 > .con > .best__eyebrow,
 .sec05 > .con > .new__eyebrow,
 .sec07 > .con > .fit__eyebrow {
