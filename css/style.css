@@ -807,7 +807,8 @@ h3.title {
 }
 
 .sec04 .best__item .img-box,
-.sec05 .new__item .img-box {
+.sec05 .new__item .img-box,
+.sec06 .clearance__item .img-box {
   position: relative;
   overflow: hidden;
 }
@@ -822,7 +823,8 @@ h3.title {
 }
 
 .sec04 .best__item .img-box .hover,
-.sec05 .new__item .img-box .hover {
+.sec05 .new__item .img-box .hover,
+.sec06 .clearance__item .img-box .hover {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -830,7 +832,8 @@ h3.title {
 }
 
 .sec04 .best__item:hover .img-box .hover,
-.sec05 .new__item:hover .img-box .hover {
+.sec05 .new__item:hover .img-box .hover,
+.sec06 .clearance__item:hover .img-box .hover {
   opacity: 1;
 }
 
