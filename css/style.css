@@ -249,6 +249,7 @@ button {
 
 .sec01 nav {
   flex-grow: 1;
+  flex-basis: 0;
 }
 
 .sec01 nav > ul {
@@ -273,6 +274,7 @@ button {
   font-weight: 700;
   letter-spacing: -1.4px;
   flex-grow: 1;
+  flex-basis: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -286,6 +288,7 @@ button {
   font-size: 11px;
   font-weight: 700;
   flex-grow: 1;
+  flex-basis: 0;
 }
 
 .sec01 > .banner {
@@ -803,11 +806,32 @@ h3.title {
   flex-direction: column;
 }
 
+.sec04 .best__item .img-box,
+.sec05 .new__item .img-box {
+  position: relative;
+  overflow: hidden;
+}
+
 .sec04 .best .best__list a .img-box > img,
 .sec05 .new .new__list a .img-box > img,
 .sec06 .clearance .clearance__list a .img-box > img,
 .sec06 .tone .tone__list a .img-box > img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec04 .best__item .img-box .hover,
+.sec05 .new__item .img-box .hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sec04 .best__item:hover .img-box .hover,
+.sec05 .new__item:hover .img-box .hover {
+  opacity: 1;
 }
 
 .sec04 .best .info,
@@ -855,6 +879,7 @@ h3.title {
 .sec04 .best .best__item > .tag,
 .sec06 .clearance .clearance__item > .tag {
   position: absolute;
+  z-index: 5;
   background-color: #111;
   color: #fff;
   padding: 7px 12px;
