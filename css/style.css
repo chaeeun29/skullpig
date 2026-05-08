@@ -235,6 +235,8 @@ button {
   width: 100%;
   height: 80px;
   background-color: #fff;
+  position: relative;
+  z-index: 5;
 }
 
 .sec01 > header > .con {
@@ -243,7 +245,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 260px;
+  padding: 0 284px;
   box-sizing: border-box;
 }
 
@@ -290,6 +292,177 @@ button {
   flex-grow: 1;
   flex-basis: 0;
 }
+
+.sec01 header ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.sec01 header ul > li > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+/* 밑줄 */
+.sec01 header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+  background: #111;
+
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.sec01 header nav ul li:last-child a::after {
+  background: #DC2626;
+}
+
+
+.sec01 header nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* 메가메뉴 커스텀 */
+.sec01 .mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+
+  transform: translateY(0);
+  padding: 20px 260px;
+  height: 400px;
+  box-sizing: border-box;
+  border-top: 1px solid #e5e5e5;
+}
+
+.sec01 .mega-menu .con {
+  padding: 0 24px; 
+}
+
+.sec01 .mega-menu__panel {
+  display: flex;
+}
+
+.sec01 .mega-menu__panel .menu-col {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.sec01 .mega-menu__panel .menu-col p {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sec01 .mega-menu__panel .menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #777;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.sec01 .mega-menu__panel .menu-list a:hover {
+  color: #111;
+  font-weight: 600;
+}
+
+.sec01 .mega-menu__panel .menu-banner {
+  flex-grow: 1;  
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sec01 .women .menu-banner,
+.sec01 .men .menu-banner {
+  padding-left: 100px;
+}
+
+.sec01 .mega-menu__panel .menu-banner:hover .txt span {
+  color: #111;
+  font-weight: 600;
+}
+
+.sec01 .mega-menu__panel .menu-banner .txt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sec01 .mega-menu__panel .menu-banner .txt p {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.sec01 .mega-menu__panel .menu-banner .txt span {
+  font-size: 13px;
+  color: #777;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.sec01 .mega-menu__panel .menu-banner .txt a:hover {
+  color: #111;
+  font-weight: 600;
+}
+
+.sec01 .mega-menu .best .menu-banner,
+.sec01 .mega-menu .sale .menu-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.sec01 .mega-menu .best .menu-col a,
+.sec01 .mega-menu .sale .menu-col a {
+  color: #777;
+  font-weight: 500;
+}
+
+.sec01 .mega-menu .best .menu-col a:hover,
+.sec01 .mega-menu .sale .menu-col a:hover {
+  color: #111;
+  font-weight: 600;
+}
+
+.sec01 .mega-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.sec01 header.is-mega-open .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sec01 .mega-menu__panel {
+  display: none;
+}
+
+.sec01 .mega-menu__panel.is-active {
+  display: flex;
+}
+
 
 .sec01 > .banner {
   height: 840px;

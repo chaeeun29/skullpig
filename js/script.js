@@ -8,6 +8,31 @@ const bannerSwiper = new Swiper('.sec01 .banner', {
   },
 });
 
+// sec01 - 탭메뉴
+$(function () {
+  const $header = $("header");
+  const $navLinks = $("header nav a[data-menu]");
+  const $panels = $(".mega-menu__panel");
+
+  $navLinks.on("mouseenter focus", function () {
+    const menuName = $(this).data("menu");
+
+    $navLinks.removeClass("is-active");
+    $(this).addClass("is-active");
+
+    $panels.removeClass("is-active");
+    $(`.mega-menu__panel[data-menu="${menuName}"]`).addClass("is-active");
+
+    $header.addClass("is-mega-open");
+  });
+
+  $header.on("mouseleave", function () {
+    $header.removeClass("is-mega-open");
+    $navLinks.removeClass("is-active");
+    $panels.removeClass("is-active");
+  });
+});
+
 // mypage - 카운트 효과
 $(function () {
   let isCounted = false;
