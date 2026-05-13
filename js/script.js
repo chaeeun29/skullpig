@@ -1,3 +1,18 @@
+// sec01 - 헤더 높이 조정
+const header = document.querySelector("header");
+const benefit = document.querySelector(".benefit");
+
+window.addEventListener("scroll", () => {
+  const benefitHeight = benefit.offsetHeight;
+
+  if (window.scrollY > benefitHeight) {
+    header.classList.add("is-fixed");
+  } else {
+    header.classList.remove("is-fixed");
+  }
+});
+
+
 // sec01 - 배너 스와이퍼
 const bannerSwiper = new Swiper('.sec01 .banner', {
   loop: true,
