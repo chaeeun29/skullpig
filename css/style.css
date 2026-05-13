@@ -1660,6 +1660,7 @@ h3.title {
   flex-direction: column;
   padding: 100px 0;
   gap: 40px;
+  box-sizing: border-box;
 }
 
 .sec11 .sns .sns__header > p {
@@ -1669,27 +1670,27 @@ h3.title {
 }
 
 .sec11 .sns__body {
-  display: flex;
-  overflow: hidden;
-}
-
-.sec11 .sns__body > .img-box {
-  flex-grow: 1;
-  flex-basis: 0;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.sec11 .sns__body .img-box img {
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+}
+
+.sec11 .sns__body .swiper-slide {
+  overflow: hidden;
+}
+
+.sec11 .sns__body .swiper-slide img {
+  width: 100%;
   object-fit: cover;
 
   transition: transform .4s ease;
 }
 
-.sec11 .sns__body .img-box:hover img {
+.sec11 .sns__body .swiper-slide:hover img {
   transform: scale(1.05);
+}
+
+.sec11 .sns__body .swiper-wrapper {
+  transition-timing-function: linear;
 }
 
 /* 푸터 */

@@ -215,3 +215,20 @@ $fitTabs.on('click', function () {
   $fitPanels.removeClass('is-active');
   $fitPanels.filter('[data-fit="' + target + '"]').addClass('is-active');
 });
+
+// sec11 - sns marguee
+// sec11 - sns marquee
+// sec11 - sns marquee
+const snsSwiper = new Swiper(".sec11 .sns__body", {
+  slidesPerView: 6,
+  spaceBetween: 0,
+  loop: true,
+  speed: 8000,
+
+  autoplay: {
+    delay: 1,
+    disableOnInteraction: false,
+  },
+
+  allowTouchMove: false,
+});
