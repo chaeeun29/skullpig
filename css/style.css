@@ -287,6 +287,10 @@ header nav > ul > li:last-child  > a {
   color: #DC2626;
 }
 
+.mo-menu-btn {
+  display: none;
+}
+
 header .logo {
   font-size: 28px;
   font-weight: 700;
@@ -760,7 +764,7 @@ h3.title {
 
 .acc-title .toggle {
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 800;
   color: #999;
   letter-spacing: 1.8px;
   transition: 0.2s;
@@ -1786,4 +1790,359 @@ h3.title {
 
 .footer .exchange__con p:last-child {
   color: #111;
+}
+
+/* 테블릿  */
+/* 테블릿(768px) - 공통 여백 줄이기 */
+@media (max-width: 768px) {
+  .con {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+  }
+
+  .sec > .con {
+    padding: 80px 0;
+  }
+
+  .benefit > p {
+    font-size: 10 px;
+  }
+
+  header {
+    height: 72px;
+  }
+  
+  header > .con {
+    width: calc(100% - 48px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 0;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header .logo {
+    flex-grow: 0;
+    flex-basis: auto;
+    font-size: 24px;
+  }
+
+  header .util a:nth-child(1),
+  header .util a:nth-child(2) {
+    display: none;
+  }
+
+  .mo-menu-btn {
+    display: flex;
+    width: 80px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  header .util {
+    flex-grow: 0;
+    flex-basis: auto;
+    display: flex;
+    width: 80px;
+  }
+
+  .sec01 .banner .txt > .subtitle {
+    font-size: 12px;
+  }
+
+  .sec01 .banner .txt > .title {
+    font-size: 56px;
+    line-height: 60px;
+  }
+
+  .sec01 .banner button {
+    font-size: 11px;
+    padding: 15px 22px;
+  }
+
+  .mypage {
+    width: 100%;
+    padding: 80px 0;
+  }
+
+  .mypage > .con {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    padding: 20px 12px;
+    box-sizing: border-box;
+  }
+
+  .mypage .name,
+  .mypage .value {
+    font-size: 12px;
+  }
+
+  .mypage .label {
+    font-size: 11px;
+  }
+
+  .mypage > .con > .info {
+    gap: 40px;
+  }
+
+  .mypage > .con > .info > .progress > .con {
+    width: 100%;
+    padding: 0;
+    font-size: 8px;
+  }
+
+  .mypage > .con > .info > .progress > .divider {
+    width: 150px;
+  }
+
+  .sec02 > .con {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .sec02 .left {
+    flex: 0 0 286px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+   .category-accordion {
+    width: 100%;
+  }
+
+  .sec02 .left .img-set {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+  }
+
+  .sec02 .left .img-set .pr {
+    display: none;
+  }
+
+  .sec02 > .con > .left .img-box {
+    width: 100%;
+    height: 370px;
+    padding: 12px 0;
+    background-color: transparent;
+  }
+
+  .sec02 > .con > .left .img-box img {
+    width: 100%;
+    height: 100%;
+    object-position: center bottom;
+    object-fit: cover;
+  }
+
+  .sec02 .right {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  h3.title {
+    font-size: 28px;
+    line-height: 48px;
+  }
+
+  .sec02 .right .acc-head {
+    padding-bottom: 24px;
+  }
+
+  .sec02 .right .acc-title {
+    height: 60px;
+    box-sizing: border-box;
+  }
+
+  .sec02 .right .acc-title .en {
+    font-size: 14px;
+  }
+
+  .sec02 .right .acc-content ul > li > a {
+    font-size: 13px;
+  }
+
+  .sec03 > .con {
+    width: calc(100% - 48px);
+    gap: 24px;
+  }
+
+  .sec03 .lookbook__header .txt p,
+  .sec06 .clearance__header .txt p {
+    font-size: 14px;
+  }
+
+  .sec03 .lookbook__control,
+  .sec06 .clearance .clearance__cta a {
+    font-size: 11px;
+  }
+
+  .sec03 .lookbook__item {
+    display: flex;
+    gap: 12px;
+  }
+
+  .sec03 .lookbook__item .left {
+    width: 446px;
+  }
+
+  .sec03 .lookbook__item .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sec03 .lookbook__item .right {
+    width: 262px;
+  }
+
+  .sec03 .lookbook__item .right .info p {
+    font-size: 13px;
+  }
+
+  .sec03 .lookbook__item .right .info .price > p:first-child {
+    font-size: 13px;
+  }
+
+  .sec03 .lookbook__item .right .info .price > p:last-child {
+    font-size: 11px;
+  }
+
+  .sec .con .eyebrow {
+    padding-bottom: 12px;
+    font-size: 11px;
+  }
+
+  .sec04 > .con,
+  .sec05 > .con,
+  .sec06 > .con,
+  .sec07 > .con,
+  .sec08 .con {
+    width: calc(100% - 48px);
+  }
+
+  .sec04 .best {
+    gap: 24px;
+  }
+
+  .sec04 .best .best__header,
+  .sec05 .new .new__header {
+    padding-top: 24px;
+  }
+
+  .sec04 .best .best__tabs {
+    gap: 20px;
+  }
+
+  .sec04 .best .best__tabs button {
+    font-size: 11px;
+  }
+
+  .sec04 .best .best__list a:last-child,
+  .sec05 .new .new__list a:last-child {
+    display: none;
+
+  }
+
+  .sec04 .best .best__list .tag {
+    font-size: 9px;
+    padding: 5px 8px;
+  }
+
+  .sec04 .best .info p,
+  .sec05 .new .new__item .info p,
+  .sec06 .clearance .clearance__list .info p {
+    font-size: 13px;
+  }
+
+  .sec04 .best .info .price p:first-child,
+  .sec05 .new .new__item .info .price > p,
+  .sec06 .clearance .clearance__item .info .price p:first-child {
+    font-size: 13px;
+  }
+
+  .sec04 .best .info .price p:last-child,
+  .sec06 .clearance .clearance__item .info .price p:last-child {
+    font-size: 11px;
+  }
+
+  .sec05 .new,
+  .sec06 .clearance {
+    gap: 24px;
+  }
+
+  .sec05 .new .new__tabs {
+    gap: 20px;
+  }
+
+  .sec05 .new .new__tabs button {
+    font-size: 11px;
+  }
+
+  .sec05 .new .new__cta {
+    padding-top: 40px;
+  }
+
+  .sec06 .clearance .clearance__list a:nth-child(4),
+  .sec06 .clearance .clearance__list a:nth-child(5) {
+    display: none;
+  }
+
+  .sec06 .clearance .clearance__list a:nth-child(6) {
+    height: 226.41px;
+  }
+
+  .sec06 .clearance .clearance__list .tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .sec07 .fit {
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+   .sec07 .fit .fit__header .fit__tabs {
+    padding-left: 12px;
+    gap: 12px;
+   }
+
+    .sec07 .fit .fit__header .fit__tabs button {
+      font-size: 10px;
+    }
+  
+  .sec07 .fit .fit__tabs button {
+    font-size: 10px;
+  }
+  .sec07 .fit .fit__panel {
+    gap: 8px;
+  }
+
+  .sec07 .fit .fit__body {
+    min-height: 331.75px;
+  }
+
+  .sec07 .fit .fit__item .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sec07 .fit .fit__body .fit__right {
+    gap: 6.47px;
+  }
 }

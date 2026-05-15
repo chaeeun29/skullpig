@@ -159,6 +159,7 @@ $('.sec05 .new__tabs button').on('click', function () {
 });
 
 // sec07 - 자동 슬라이드
+// sec07 - 자동 슬라이드
 const $tabs = $('.sec07 .fit__tabs button');
 const $panels = $('.sec07 .fit__panel');
 
@@ -176,28 +177,26 @@ function showFit(index) {
   $panels.filter('[data-fit="' + target + '"]').addClass('is-active');
 }
 
-// 자동 시작
+function stopAuto() {
+  clearInterval(autoSlide);
+}
+
 function startAuto() {
+  stopAuto();
+
   autoSlide = setInterval(() => {
     current = (current + 1) % total;
     showFit(current);
   }, 3000);
 }
 
-// 자동 멈춤
-function stopAuto() {
-  clearInterval(autoSlide);
-}
-
 startAuto();
 
-// 클릭
 $tabs.on('click', function () {
-  current = $(this).index();
+  current = $tabs.index(this);
   showFit(current);
 });
 
-// hover 멈춤
 $('.sec07 .fit').on('mouseenter', stopAuto);
 $('.sec07 .fit').on('mouseleave', startAuto);
 
