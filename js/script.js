@@ -48,6 +48,23 @@ $(function () {
   });
 });
 
+// sec01 - 태블릿 menu버튼 탭메뉴 
+// tablet menu open
+$('.tablet-menu-btn').on('click', function () {
+  $('.tablet-menu').addClass('is-active');
+  $('.tablet-overlay').addClass('is-active');
+
+  $('body').css('overflow', 'hidden');
+});
+
+// tablet menu close
+$('.tablet-menu__close, .tablet-overlay').on('click', function () {
+  $('.tablet-menu').removeClass('is-active');
+  $('.tablet-overlay').removeClass('is-active');
+
+  $('body').css('overflow', '');
+});
+
 // mypage - 카운트 효과
 $(function () {
   let isCounted = false;
@@ -202,7 +219,7 @@ $('.sec07 .fit').on('mouseleave', startAuto);
 
 // sec09 - 슬라이드
 // sec09 - find your fit tabs
-const $fitTabs = $('.sec09 .fit__tabs button');
+const $fitTabs = $('.sec09 .find__tabs button');
 const $fitPanels = $('.sec09 .find__panel');
 
 $fitTabs.on('click', function () {

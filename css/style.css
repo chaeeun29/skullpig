@@ -239,6 +239,7 @@ header {
   background-color: #fff;
   position: fixed;
   z-index: 10;
+  font-family: 'Pretendard';
 
   border-bottom: 1px solid transparent;
   transition: top .3s ease, background .3s ease, border-color .3s ease;
@@ -287,7 +288,7 @@ header nav > ul > li:last-child  > a {
   color: #DC2626;
 }
 
-.mo-menu-btn {
+.tablet-menu-btn {
   display: none;
 }
 
@@ -483,7 +484,118 @@ header .mega-menu__panel.is-active {
   display: flex;
 }
 
+/* 태블릿 menu 클릭 시 커스텀 */
 
+/* overlay */
+.tablet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 11;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+}
+
+.tablet-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.tablet-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  width: 400px;
+  height: 100vh;
+
+  background-color: #fff;
+  color: #111;
+  font-family: 'Pretendard';
+
+  transform: translateX(-100%);
+  transition: .3s;
+  padding: 0 20px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tablet-menu.is-active {
+transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 태블릿 메뉴 호버 효과 */
+.tablet-menu a {
+  transition: transform 0.2s ease, font-weight 0.2s ease, color 0.2s ease;
+}
+
+.tablet-menu a:hover {
+  transform: translateX(6px);
+  font-weight: 600;
+}
+
+.tablet-menu__main .sale:hover {
+  color: #DC2626;
+}
+
+/* 태블릿 메뉴 커스텀 */
+.tablet-menu .tablet-menu__top {
+  padding: 20px 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tablet-menu__top .tablet-menu__logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.tablet-menu__top .tablet-menu__close {
+  color: #777;
+  font-size: 20px;
+}
+
+.tablet-menu__main,
+.tablet-menu__user,
+.tablet-menu__service {
+  display: flex;
+  flex-direction: column;
+}
+
+.tablet-menu__main {
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tablet-menu__main a:last-child {
+  color: #DC2626;
+}
+
+.tablet-menu__user,
+.tablet-menu__service {
+  gap: 15px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tablet-menu__country {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* sec01 */
 .sec01 > .banner {
   height: 840px;
   position: relative;
@@ -501,7 +613,18 @@ header .mega-menu__panel.is-active {
 .sec01 > .banner .img-box {
   position: absolute;
   inset: 0;
+}
 
+.sec01 .banner .img-box picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sec01 .banner .img-box picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sec01 > .banner .img-box > img {
@@ -1337,12 +1460,12 @@ h3.title {
   gap: 15px;
 }
 
-.sec09 .fit__tabs {
+.sec09 .find__tabs {
   display: flex;
   gap: 12px
 }
 
-.sec09 .fit__tabs button {
+.sec09 .find__tabs button {
   width: 101.5px;
   border: 1px solid #fff;
   padding: 7px 0;
@@ -1375,7 +1498,7 @@ h3.title {
   object-fit: cover;
 }
 
-.sec09 .fit__tabs button.is-active {
+.sec09 .find__tabs button.is-active {
   background-color: #fff;
   color: #111;
 }
@@ -1742,7 +1865,7 @@ h3.title {
   color: #777;
   font-size: 15px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 30px;
   letter-spacing: -0.5px;
   padding-bottom: 32px;
 }
@@ -1786,6 +1909,7 @@ h3.title {
   line-height: 28px;
   letter-spacing: -0.1px;
   color: #ccc;
+  padding-top: 20px;
 }
 
 .footer .exchange__con p:last-child {
@@ -1836,7 +1960,7 @@ h3.title {
     display: none;
   }
 
-  .mo-menu-btn {
+  .tablet-menu-btn {
     display: flex;
     width: 80px;
     text-align: left;
@@ -1849,6 +1973,10 @@ h3.title {
     flex-basis: auto;
     display: flex;
     width: 80px;
+  }
+
+  .sec01 .banner {
+    height: 680px;
   }
 
   .sec01 .banner .txt > .subtitle {
@@ -1982,12 +2110,21 @@ h3.title {
   }
 
   .sec03 .lookbook__header .txt p,
-  .sec06 .clearance__header .txt p {
+  .sec06 .clearance__header .txt p,
+  .sec08 .tone__header .txt p {
     font-size: 14px;
+  }
+ 
+   .sec03 .lookbook__header .txt,
+   .sec06 .clearance__header .txt,
+  .sec08 .tone__header .txt {
+    gap: 5px;
+
   }
 
   .sec03 .lookbook__control,
-  .sec06 .clearance .clearance__cta a {
+  .sec06 .clearance .clearance__cta a,
+  .sec08 .tone .tone__cta a {
     font-size: 11px;
   }
 
@@ -2031,11 +2168,15 @@ h3.title {
   .sec05 > .con,
   .sec06 > .con,
   .sec07 > .con,
-  .sec08 .con {
+  .sec08 > .con,
+  .sec09 > .con,
+  .sec10 > .con,
+  .footer > .con {
     width: calc(100% - 48px);
   }
 
-  .sec04 .best {
+  .sec04 .best,
+  .sec08 .tone {
     gap: 24px;
   }
 
@@ -2065,7 +2206,8 @@ h3.title {
 
   .sec04 .best .info p,
   .sec05 .new .new__item .info p,
-  .sec06 .clearance .clearance__list .info p {
+  .sec06 .clearance .clearance__list .info p,
+  .sec09 .find .find__tabs button {
     font-size: 13px;
   }
 
@@ -2145,4 +2287,105 @@ h3.title {
   .sec07 .fit .fit__body .fit__right {
     gap: 6.47px;
   }
+
+  .sec08 .tone .tone__list {
+    height: 255.72px;
+    gap: 6px;
+  }
+
+  .sec08 .tone .tone__item .info p {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .sec09 .find {
+    gap: 30px;
+  }
+
+  .sec09 .find .find__tabs button {
+    padding: 5px 0px;
+    width: 80px;
+    box-sizing: border-box;
+  }
+
+  .sec09 .find .find__body .find__info {
+    width: 200px;
+    height: 100px;
+    display: inline-flex;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sec09 .find .find__info .find__thumb {
+    width: 73.33px;
+    height: 73.33px;
+  }
+
+  .sec09 .find .find__info .price {
+    padding-bottom: 8px;
+  }
+
+  .sec09 .find .find__info .name,
+  .sec09 .find .find__info .price strong {
+    font-size: 11px;
+  }
+
+  .sec09 .find .find__info .price span {
+    font-size: 9px;
+  }
+
+  .sec09 .find .find__info .color-chip span {
+    width: 12px;
+    height: 12px;
+  }
+
+  .sec10 .con {
+    gap: 24px;
+  }
+
+  .sec10 .journal__body {
+    padding-top: 24px;
+    gap: 12px;
+  }
+
+  .sec10 .journal__body .info p {
+    font-size: 10px;
+  }
+
+  .sec10 .journal__body .text .title {
+    font-size: 14px;
+  }
+
+  .sec10 .journal__body .text .con {
+    width: 100%;
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .sec11 .sns {
+    gap: 24px;
+    padding: 80px 0;
+  }
+
+  .footer .con {
+    gap: 24px;
+  }
+
+  .footer .title,
+  .footer .cs__time,
+  .footer .info__detail,
+  .footer .exchange__con p {
+    font-size: 12px;
+  }
+
+  .footer .cs__time,
+  .footer .info__detail,
+  .footer .exchange__con p {
+    line-height: 24px;
+  }
+
+  .footer .cs__number {
+    font-size: 20px;
+  }
+
 }

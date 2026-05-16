@@ -55,7 +55,7 @@
         </ul>
       </nav>
 
-      <button class="mo-menu-btn">MENU</button>
+      <button class="tablet-menu-btn">MENU</button>
 
       <div class="logo">
         <a href="#">SKULLPIG</a>
@@ -288,6 +288,40 @@
 
   </header>
 
+  <!-- tablet menu -->
+  <div class="tablet-overlay"></div>
+  
+  <div class="tablet-menu">
+
+    <div class="tablet-menu__top">
+      <a href="#" class="tablet-menu__logo">SKULLPIG</a>
+      <button type="button" class="tablet-menu__close">X</button>
+    </div>
+
+    <div class="tablet-menu__main">
+      <a href="#">WOMEN</a>
+      <a href="#">MEN</a>
+      <a href="#">BEST</a>
+      <a href="#" class="sale">SALE</a>
+    </div>
+
+    <div class="tablet-menu__user">
+      <a href="#">LOGIN / JOIN</a>
+      <a href="#">MYPAGE</a>
+      <a href="#">WISHLIST</a>
+    </div>
+
+    <div class="tablet-menu__service">
+      <a href="#">STORE LOCATOR</a>
+      <a href="#">RETURN / EXCHANGE</a>
+    </div>
+
+    <div class="tablet-menu__country">
+      <a href="#">KOREA (KRW)</a>
+    </div>
+
+  </div>
+
   <div class="sec sec01">
 
     <div class="banner swiper">
@@ -296,8 +330,21 @@
 
         <!-- slide 01 -->
         <div class="swiper-slide">
+
           <div class="img-box">
-            <img src="image/sec01/banner1.png" alt="banner1">
+
+            <picture>
+
+              <!-- mobile -->
+               <source
+               media="(max-width: 768px)"
+               srcset="image/sec01/tablet_banner1.png">
+
+               <!-- pc -->
+                <img src="image/sec01/banner1.png" alt="banner1">
+                
+            </picture>
+            
           </div>
 
           <div class="txt">
@@ -1548,7 +1595,7 @@
         <div class="find__header">
           <h3 class="title">FIND YOUR FIT</h3>
 
-          <div class="fit__tabs">
+          <div class="find__tabs">
             <button type="button" class="is-active" data-fit="natural">내추럴</button>
             <button type="button" data-fit="straight">스트라이트</button>
             <button type="button" data-fit="wave">웨이브</button>
@@ -1651,7 +1698,7 @@
               <div class="find__hotspot hotspot01">
                 <button type="button" class="find__dot"></button>
 
-                <a hreef="#" class="find__info">
+                <a href="#" class="find__info">
                   <div class="find__thumb">
                     <img src="image/sec09/straight_01_hover.png" alt="straight">
                   </div>
@@ -1718,7 +1765,7 @@
           </div>
 
           <!-- wave -->
-          <div class="find__panel straight" data-fit="wave">
+          <div class="find__panel wave" data-fit="wave">
 
             <div class="find__visual">
               <a href="#" class="find__item">
@@ -1961,7 +2008,8 @@
 
         <div class="info__detail">
           <p>주식회사 제이스버디 | 대표이사 : 조준호</p>
-          <p>사업자등록번호 : 123-45-67890 | 통신판매업신고 : 제2015-서울성동-1234호</p>
+          <p>사업자등록번호 : 123-45-67890</p>
+          <p>통신판매업신고 : 제2015-서울성동-1234호</p>
           <p>주소 : 서울특별시 성동구 성수일로 6길 33 아연디지털타워 B1층</p>
           <p class="info__copy">© JAY'S BUDDY CO.,LTD. All Rights Reserved.</p>
         </div>
