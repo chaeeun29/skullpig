@@ -641,11 +641,11 @@ transform: translateX(0);
   align-items: center;
   justify-content: center;
   gap: 24px;
-  color: #111;
+  color: #fff;
 }
 
 .sec01 > .banner .txt > .subtitle {
-  border: 1px solid #111;
+  border: 1px solid #fff;
   padding: 6px 16px;
   font-size: 14px;
   font-weight: 500;
@@ -667,10 +667,10 @@ transform: translateX(0);
   padding: 20px 40px;
   font-size: 12px;
   font-weight: 600;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   letter-spacing: 0.1em;
   overflow: hidden;
-  color: #000;
+  color: #fff;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -681,7 +681,7 @@ transform: translateX(0);
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #111;
+  background-color: #fff;
   transition: width 0.4s ease;
   z-index: 0;
 }
@@ -698,7 +698,7 @@ transform: translateX(0);
 }
 
 .sec01 > .banner button:hover {
-  color: #fff;
+  color: #000;
 }
 
 /* 섹션mypage */
@@ -1917,7 +1917,6 @@ h3.title {
 }
 
 /* 테블릿  */
-/* 테블릿(768px) - 공통 여백 줄이기 */
 @media (max-width: 768px) {
   .con {
     width: calc(100% - 48px);
@@ -2386,6 +2385,86 @@ h3.title {
 
   .footer .cs__number {
     font-size: 20px;
+  }
+
+}
+
+
+/* 모바일  */
+@media (max-width: 375px) {
+
+  body {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .con {
+    width: 100%;
+    max-width: none;
+  }
+
+  .benefit {
+    gap: 5px;
+    height: 30px;
+  }
+
+  .benefit p {
+    font-size: 9px;
+    font-weight: 600;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header .con {
+    width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  }
+
+  .sec01 .banner {
+    height: 540px;
+  }
+
+  .sec .con {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+  }
+
+  .mypage {
+    width: 100%;
+    padding: 40px 20px 20px 20px;
+  }
+
+  .mypage > .con {
+    padding: 20px 12px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .mypage > .con > .info {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .mypage .con .name,
+  .mypage .info .value  {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .mypage .info .label {
+    font-size: 11px;
+  }
+
+  .mypage > .con > .info > .progress > .con > .label,
+  .mypage > .con > .info > .progress > .con > .value {
+    font-weight: 600;
   }
 
 }
