@@ -1314,6 +1314,49 @@ h3.title {
   font-weight: 700;
 }
 
+.sec06 .clearance__list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sec06 .clearance__list .swiper-wrapper {
+  display: flex;
+}
+
+.sec06 .clearance__item {
+  min-width: 0;
+}
+
+/* sec06 PC / TABLET 복구 */
+@media (min-width: 376px) {
+  .sec06 .clearance__list .swiper-wrapper {
+    display: flex;
+    gap: 8px;
+    transform: none !important;
+  }
+
+  .sec06 .clearance__item {
+    flex: 1;
+    width: auto !important;
+  }
+
+  .sec06 .clearance__list {
+    overflow: visible;
+  }
+
+  .sec06 .clearance .clearance__list a:last-child {
+  border: 1px solid #E5E5E5 !important;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 299px;
+  font-size: 11px;
+  font-weight: 700;
+
+  }
+}
+
 /* 섹션7 - fit */
 .sec07 .fit {
   display: flex;
@@ -2289,6 +2332,20 @@ h3.title {
     padding: 4px 8px;
   }
 
+  .sec06 .clearance .clearance__list > .swiper-wrapper > a:last-child {
+    height: 231.33px;
+
+    border: 1px solid #E5E5E5;
+    color: #999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: 700;
+  }
+
   .sec07 .fit {
     gap: 12px;
     padding-top: 24px;
@@ -2463,6 +2520,10 @@ h3.title {
   padding: 0 20px;
   box-sizing: border-box;
   overflow: hidden;
+  }
+
+  .tablet-menu {
+    width: 375px;
   }
 
   .sec01 .banner {
@@ -2685,6 +2746,24 @@ h3.title {
     font-size: 10px;
   }
 
+  .sec06 .clearance {
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .sec06 .clearance__header {
+    padding-bottom: 12px;
+  }
+
+  .sec06 .clearance__item {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .sec06 .clearance .clearance__list a:nth-child(6) {
+    height: auto;
+  }
+
   .sec07 .fit {
     flex-direction: column;
     padding-top: 12px;
@@ -2850,7 +2929,106 @@ h3.title {
     height: 12px;
   }
 
+  .sec10 > .con {
+    gap: 12px;
+  }
+  
+  .sec10 .journal__body {
+    padding-top: 12px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .sec10 .journal__body .left,
+  .sec10 .journal__body .right {
+    gap: 12px;
+  }
+
+  .sec10 .journal__body .text {
+    gap: 5px;
+  }
+
+   .sec10 .journal__body .text .info {
+    font-weight: 600;
+   }
+
+   .sec10 .journal__body .text .info .title {
+    font-size: 13px;
+    font-weight: 600;
+   }
+
+   .sec10 .journal__body .text > .con {
+    padding: 0;
+   }
+
+   .sec11 .sns {
+    gap: 12px;
+   }
+
+   .sec11 .sns .sns__header p {
+    font-size: 12px;
+    font-weight: 600;
+   }
+
   .footer {
     overflow: hidden;
+  }
+
+  .footer .con {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+
+  .footer .cs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer .title {
+    font-weight: 600;
+  }
+
+  .footer .cs .title {
+    padding-bottom: 0;
+  }
+
+  .footer .cs .cs__time {
+    padding-bottom: 0;
+    line-height: 20px;
+  }
+
+  .footer .cs .cs__number {
+    line-height: 35px;
+  }
+
+  .footer .cs .cs__btn {
+    font-weight: 600;
+  }
+
+  .footer .info {
+    gap: 8px;
+  }
+
+  .footer .info .info__detail p {
+    line-height: 20px;
+  }
+
+  .footer .info .info__detail p:first-child {
+    padding-bottom: 5px;
+  }
+
+  .footer .info .info__copy {
+    padding-top: 8px;
+  }
+
+  .footer .exchange {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .footer .exchange .exchange__con p {
+    line-height: 20px;
   }
 }

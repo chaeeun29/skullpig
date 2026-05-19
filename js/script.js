@@ -239,6 +239,33 @@ $(window).on('resize', function () {
   initProductSwiper();
 });
 
+// sec06 - 모바일 스와이퍼
+let clearanceSwiper = null;
+
+function initClearanceSwiper() {
+  const isMobile = window.matchMedia('(max-width: 375px)').matches;
+
+  if (clearanceSwiper) {
+    clearanceSwiper.destroy(true, true);
+    clearanceSwiper = null;
+  }
+
+  if (!isMobile) return;
+
+  clearanceSwiper = new Swiper('.sec06 .clearance__list', {
+    slidesPerView: 2.1,
+    spaceBetween: 8,
+    speed: 500,
+    grabCursor: true,
+  });
+}
+
+initClearanceSwiper();
+
+$(window).on('resize', function () {
+  initClearanceSwiper();
+});
+
 // sec07 - 자동 슬라이드
 // sec07 - 자동 슬라이드
 const $tabs = $('.sec07 .fit__tabs button');
@@ -339,10 +366,16 @@ $(window).on('resize', function () {
 
 // sec11 - sns marquee
 const snsSwiper = new Swiper(".sec11 .sns__body", {
-  slidesPerView: 6,
+  slidesPerView: 3,
   spaceBetween: 0,
   loop: true,
-  speed: 8000,
+  speed: 4000,
+
+  breakpoints: {
+    376: {
+      slidesPerView: 6,
+    }
+  },
 
   autoplay: {
     delay: 1,
