@@ -138,41 +138,105 @@ $('.sec02 .category-accordion .acc-title').on('click', function () {
   $('.sec02 .left .img-set[data-category="' + category + '"]').addClass('active');
 });
 
+// sec02 - 모바일에서 스와이퍼
+const categorySwiper = new Swiper(".categorySwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 8,
+  freeMode: true,
+});
+
 // sec03 - 슬라이드
 // Lookbook Swiper
 $(function () {
   const lookbookSwiper = new Swiper('.lookbook__slider', {
     slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 700,
+    spaceBetween: 24,
 
     navigation: {
       nextEl: '.lookbook-next',
       prevEl: '.lookbook-prev',
     },
+
+    breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      spaceBetween: 12,
+    },
+    376: {
+      slidesPerView: 1,
+      spaceBetween: 24,
+    }
+  
+
+  }
   });
 });
 
-// sec04 - tab메뉴 
+/* sec04, sec05 모바일 스와이퍼 + 탭 최종 */
+
+let productSwipers = [];
+
+function destroyProductSwiper() {
+  productSwipers.forEach(function (swiper) {
+    swiper.destroy(true, true);
+  });
+
+  productSwipers = [];
+}
+
+function initProductSwiper() {
+  const isMobile = window.matchMedia('(max-width: 480px)').matches;
+
+  destroyProductSwiper();
+
+  if (!isMobile) return;
+
+  $('.sec04 .best__panel.is-active .best__list, .sec05 .new__panel.is-active .new__list').each(function () {
+    const swiper = new Swiper(this, {
+      slidesPerView: 2.1,
+      spaceBetween: 12,
+      speed: 500,
+      grabCursor: true,
+      observer: true,
+      observeParents: true,
+    });
+
+    productSwipers.push(swiper);
+  });
+}
+
+/* sec04 BEST 탭 */
 $('.sec04 .best__tabs button').on('click', function () {
-  const filter = $(this).data('filter');
+  const filter = $(this).attr('data-filter');
 
   $('.sec04 .best__tabs button').removeClass('is-active');
   $(this).addClass('is-active');
 
-  $('.sec04 .best__panel').removeClass('is-active').hide();
-  $('.sec04 .best__panel[data-category="' + filter + '"]').addClass('is-active').show();
+  $('.sec04 .best__panel').removeClass('is-active');
+  $('.sec04 .best__panel[data-category="' + filter + '"]').addClass('is-active');
+
+  initProductSwiper();
 });
 
-// sec05 - tab메뉴
+/* sec05 NEW 탭 */
 $('.sec05 .new__tabs button').on('click', function () {
-  const filter = $(this).data('filter');
+  const filter = $(this).attr('data-filter');
 
   $('.sec05 .new__tabs button').removeClass('is-active');
   $(this).addClass('is-active');
 
-  $('.sec05 .new__panel').removeClass('is-active').hide();
-  $('.sec05 .new__panel[data-category="' + filter + '"]').addClass('is-active').show();
+  $('.sec05 .new__panel').removeClass('is-active');
+  $('.sec05 .new__panel[data-category="' + filter + '"]').addClass('is-active');
+
+  initProductSwiper();
+});
+
+/* 최초 실행 */
+initProductSwiper();
+
+/* 리사이즈 대응 */
+$(window).on('resize', function () {
+  initProductSwiper();
 });
 
 // sec07 - 자동 슬라이드
@@ -217,23 +281,62 @@ $tabs.on('click', function () {
 $('.sec07 .fit').on('mouseenter', stopAuto);
 $('.sec07 .fit').on('mouseleave', startAuto);
 
-// sec09 - 슬라이드
-// sec09 - find your fit tabs
-const $fitTabs = $('.sec09 .find__tabs button');
-const $fitPanels = $('.sec09 .find__panel');
+// sec09 - 모바일 스와이퍼
+// sec09 - 모바일 find swiper
+let findMobileSwiper = null;
 
-$fitTabs.on('click', function () {
+function initFindMobileSwiper() {
+  const isMobile = window.matchMedia('(max-width: 375px)').matches;
+
+  if (findMobileSwiper) {
+    findMobileSwiper.destroy(true, true);
+    findMobileSwiper = null;
+  }
+
+  if (!isMobile) return;
+
+  const $activePanel = $('.sec09 .find__panel.is-active');
+
+  findMobileSwiper = new Swiper($activePanel.find('.find__mobile')[0], {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 500,
+
+    pagination: {
+      el: $activePanel.find('.find__pagination')[0],
+      clickable: true,
+    },
+
+    on: {
+      slideChange: function () {
+        const index = this.activeIndex;
+
+        $activePanel.find('.find__mobile-info').removeClass('is-active');
+        $activePanel.find('.find__mobile-info[data-info="' + index + '"]').addClass('is-active');
+      }
+    }
+  });
+}
+
+initFindMobileSwiper();
+
+$('.sec09 .find__tabs button').on('click', function () {
   const target = $(this).data('fit');
 
-  $fitTabs.removeClass('is-active');
+  $('.sec09 .find__tabs button').removeClass('is-active');
   $(this).addClass('is-active');
 
-  $fitPanels.removeClass('is-active');
-  $fitPanels.filter('[data-fit="' + target + '"]').addClass('is-active');
+  $('.sec09 .find__panel').removeClass('is-active');
+  $('.sec09 .find__panel[data-fit="' + target + '"]').addClass('is-active');
+
+  initFindMobileSwiper();
 });
 
-// sec11 - sns marguee
-// sec11 - sns marquee
+$(window).on('resize', function () {
+  initFindMobileSwiper();
+});
+
+
 // sec11 - sns marquee
 const snsSwiper = new Swiper(".sec11 .sns__body", {
   slidesPerView: 6,
