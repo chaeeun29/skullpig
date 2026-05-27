@@ -293,14 +293,17 @@ header nav > ul > li:last-child  > a {
 }
 
 header .logo {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -1.4px;
   flex-grow: 1;
   flex-basis: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header .logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1.4px;
 }
 
 header .util {
@@ -856,14 +859,14 @@ transform: translateX(0);
   border-bottom: 1px solid #111;
 }
 
-h3.title {
+h2.title {
   font-family: "Poppins", sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 48px;
 }
 
-.category-accordion .acc-head h3 {
+.category-accordion .acc-head h2 {
   letter-spacing: -0.03em;
 }
 
@@ -2031,6 +2034,9 @@ h3.title {
   header .logo {
     flex-grow: 0;
     flex-basis: auto;
+  }
+
+  header .logo h1 {
     font-size: 24px;
   }
 
@@ -2161,7 +2167,7 @@ h3.title {
     flex-basis: 0;
   }
 
-  h3.title {
+  h2.title {
     font-size: 28px;
     line-height: 48px;
   }
@@ -2378,7 +2384,7 @@ h3.title {
   }
 
   .sec07 .fit .fit__body .fit__right {
-    gap: 6.47px;
+    gap: 3.66px;
   }
 
   .sec08 .tone .tone__list {
@@ -2610,7 +2616,7 @@ h3.title {
     letter-spacing: 1.8px;
   }
 
-  .sec h3.title {
+  .sec h2.title {
     font-size: 24px;
     font-weight: 600;
     line-height: 40px;
@@ -2689,8 +2695,8 @@ h3.title {
     justify-content: start;
   }
 
-  .sec04 .best__header h3,
-  .sec05 .new__header h3 {
+  .sec04 .best__header h2,
+  .sec05 .new__header h2 {
     width: 100%;
   }
 
