@@ -149,8 +149,8 @@ const categorySwiper = new Swiper(".categorySwiper", {
 // Lookbook Swiper
 $(function () {
   const lookbookSwiper = new Swiper('.lookbook__slider', {
-    slidesPerView: 1,
-    spaceBetween: 24,
+    slidesPerView: 2.1,
+    spaceBetween: 12,
 
     navigation: {
       nextEl: '.lookbook-next',
@@ -158,17 +158,12 @@ $(function () {
     },
 
     breakpoints: {
-    0: {
-      slidesPerView: "auto",
-      spaceBetween: 12,
-    },
-    376: {
+     621: {
       slidesPerView: 1,
       spaceBetween: 24,
-    }
-  
+     }
 
-  }
+    }
   });
 });
 
@@ -185,7 +180,7 @@ function destroyProductSwiper() {
 }
 
 function initProductSwiper() {
-  const isMobile = window.matchMedia('(max-width: 480px)').matches;
+  const isMobile = window.matchMedia('(max-width: 620px)').matches;
 
   destroyProductSwiper();
 
@@ -243,7 +238,7 @@ $(window).on('resize', function () {
 let clearanceSwiper = null;
 
 function initClearanceSwiper() {
-  const isMobile = window.matchMedia('(max-width: 375px)').matches;
+  const isMobile = window.matchMedia('(max-width: 620px)').matches;
 
   if (clearanceSwiper) {
     clearanceSwiper.destroy(true, true);
@@ -313,7 +308,7 @@ $('.sec07 .fit').on('mouseleave', startAuto);
 let findMobileSwiper = null;
 
 function initFindMobileSwiper() {
-  const isMobile = window.matchMedia('(max-width: 375px)').matches;
+  const isMobile = window.matchMedia('(max-width: 620px)').matches;
 
   if (findMobileSwiper) {
     findMobileSwiper.destroy(true, true);
@@ -372,7 +367,7 @@ const snsSwiper = new Swiper(".sec11 .sns__body", {
   speed: 4000,
 
   breakpoints: {
-    376: {
+    621: {
       slidesPerView: 6,
     }
   },
